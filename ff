@@ -1,0 +1,131 @@
+const child = document.getElementsByClassName("child")
+
+let posY = 0
+let posX = 0
+
+document.addEventListener("keydown", function (e){
+  console.log(e.keyCode)
+  if (e.key == "s") {
+    if (posY === 750) {
+      posY += 0;
+    } else {
+      posY += 50;
+      console.log(posY)
+    }
+  }
+  if (e.key == 'd') {
+    if (posX === 750) {
+      posX += 0;
+    } else {
+      posX += 50;
+      console.log(posX)
+    }
+  }
+  if (e.key == 'z') {
+    if (posY === 0) {
+      posY += 0;
+    } else {
+      posX += 0;
+      console.log(posY)
+    }
+  }
+  if (e.key == 'q') {
+    if (posX === 0) {
+      posX += 0;
+    } else {
+      posX += 50;
+      console.log(posY)
+    }
+  }
+  if (e.key == '32') {
+    console.log('X' + posX + 'Y' + posY)
+
+    let posYN = window.getComputedStyle(child).getPropertyValue('top')
+    let posXN = window.getComputedStyle(child).getPropertyValue('left')
+    let explos = new Bomb(posXN, posYN)
+    explos.Bomb
+  }
+
+  child.style.top = posY + 'px';
+  child.style.left = posX + 'px';
+  console.log(posY + 'yes')
+})
+
+
+
+
+
+
+
+//  function move(p, d) {
+//   const leftElement = getProperty(p, "left");
+//   const topElement = getProperty(p, "top");
+//
+//   switch (d) {
+//     case "up":
+//       if (topElement > 0) {
+//         p.style.top = topElement - 50 + "px";
+//       }
+//       else {
+//         audioElement.play()
+//       }
+//       break;
+//
+//     case "down":
+//       if (topElement < 600) {
+//         p.style.top = topElement + 50 + "px";
+//       }
+//       else {
+//         audioElement.play()
+//       }
+//       break;
+//
+//     case "left":
+//       if (leftElement > 0) {
+//         p.style.left = leftElement - 50 + "px";
+//       }
+//       else {
+//         audioElement.play()
+//       }
+//       break;
+//
+//     case "right":
+//       if (leftElement < 600) {
+//         p.style.left = leftElement + 50 + "px";
+//       }
+//       else {
+//         audioElement.play()
+//       }
+//       break;
+//   }
+// }
+//
+//
+//
+// window.addEventListener("keydown", function (e) {
+//
+//   let key_code = e.keyCode;
+//   switch (key_code) {
+//     case 81:
+//       move(player, "left");
+//       break;
+//
+//     case 68:
+//       move(player, "right");
+//       break;
+//
+//     case 90:
+//       move(player, "up");
+//       break;
+//
+//     case 83:
+//       move(player, "down");
+//       break;
+//     case 32:
+//       createBomb(getProperty(player, "top"), getProperty(player, "left"));
+//       audioElement.play();
+//
+//       break;
+//   }
+//
+// });
